@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Tetris</title>
+    <link rel="shortcut icon" href="./images/icon.png">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #content {
+            display: inline-block;
+            position: relative;
+        }
+
+        #instructions {
+            position: absolute;
+            left: 0px;
+            top: 200px;
+        }
+
+        #developedBy {
+            font-family: Helvetica, sans-serif;
+            font-size: 15px;
+            position: relative;
+            left: 1300px;
+            top: 570px;
+        }
+
+        #myName {
+            font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+            font-size: 35px;
+            position: relative;
+            left: 1260px;
+            top: 530px;
+        }
+
+        #screem {
+            margin: 1em auto;
+            padding: 1em;
+            border: 3px solid black;
+            border-radius: 12px;
+            background-color: #DCDCDC;
+            font-size: 1.75em;
+            width: 650px;
+            position: relative;
+            left: 400px;
+            top: -125px;
+        }
+
+        #game {
+            display: inline-block;
+            vertical-align: top;
+            width: 300px;
+            height: 600px;
+        }
+
+        #menu {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            width: 300px;
+            height: 600px;
+        }
+
+        #menu p {
+            margin: 0.5em 0;
+            text-align: center;
+        }
+
+        #textNextPiece {
+            font-size: 22px;
+            position: relative;
+            left: 19px;
+            top: 55px;
+        }
+
+        #nextPiece {
+            position: relative;
+            left: 20px;
+            top: 50px;
+            display: block;
+            margin: 0 auto;
+            background-color: #000;
+            width: 150px;
+            height: 150px;
+        }
+
+        #textScore {
+            position: relative;
+            left: 20px;
+            top: 100px;
+        }
+
+        #textSpeed {
+            position: relative;
+            left: 20px;
+            top: 100px;
+        }
+
+        #start {
+            position: relative;
+            left: 40px;
+            top: 150px;
+        }
+
+        #restart {
+            position: relative;
+            left: 95px;
+            top: 150px;
+        }
+
+        #score {
+            color: green;
+            vertical-align: middle;
+        }
+
+        #speed {
+            color: blue;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <img id="instructions" src="./images/instructions.png" width=360 height=351>
+        <p id="developedBy">developed by </p>
+        <p id="myName">Luiz Henrique </p>
+
+        <div id="screem">
+            <canvas id="game"></canvas>
+            <div id="menu">
+                <p id="textNextPiece">proxima peça </p>
+                <p><canvas id="nextPiece"></canvas></p>
+                <p id="textScore">pontos: <span id="score">0</span></p>
+                <p id="textSpeed">velocidade: <span id="speed">0 </span></p>
+                <input class="clickableElement" id="start" type="image" src="./images/button-play.png" width=111 height=46
+                    onclick="GameController.startEvent()" />
+                <input class="clickableElement" id="restart" type="image" src="./images/button-restart.png" width=111 height=46
+                    onclick="GameController.restartEvent()" />
+            </div>
+        </div>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./game.js"></script>
+    <script src="./listener.js"></script>
+    <script src="./main.js"></script>
+    <script src="./render.js"></script>
+</body>
+
+</html>
